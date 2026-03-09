@@ -90,6 +90,28 @@
     - 4️⃣ What is an arrow function?
     - 5️⃣ What are template literals?
 
+    ## Questions and Answers
+
+### 1. What is the difference between var, let, and const?
+
+`var` is the old way to declare variables in JavaScript. It can be re-declared and updated, and it does not follow block scope properly. `let` is newer and block-scoped, so it works better inside loops and conditions. `const` is also block-scoped, but its value cannot be reassigned after declaration.
+
+### 2. What is the spread operator (...)?
+
+The spread operator is used to expand values from an array or object. It helps copy arrays, merge arrays, copy objects, or pass multiple values into a function in a clean way.
+
+### 3. What is the difference between map(), filter(), and forEach()?
+
+`map()` creates a new array by changing every item. `filter()` creates a new array but keeps only the items that match a condition. `forEach()` only loops through the array and performs an action, but it does not return a new array.
+
+### 4. What is an arrow function?
+
+An arrow function is a short way to write a function in JavaScript. It makes code cleaner and is often used for small functions, callbacks, and modern JavaScript syntax.
+
+### 5. What are template literals?
+
+Template literals are strings written using backticks. They make it easy to add variables inside a string using `${}` and also support multi-line text.
+
 
 ---
 
