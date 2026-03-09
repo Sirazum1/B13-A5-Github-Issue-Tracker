@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Issues Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div class="app-shell">
+
+<section id="loginPage" class="login-page">
+
+<div class="login-card">
+
+<img src="assets/github-logo.png"
+     alt="GitHub Issues Tracker Logo"
+     class="login-logo" />
+
+<h1>GitHub Issues Tracker</h1>
+
+<p class="subtitle">
+Sign in to explore all open and closed issues.
+</p>
+
+<form id="loginForm" class="login-form">
+
+<label>
+<span>Username</span>
+
+<input
+type="text"
+id="username"
+placeholder="Enter username"
+autocomplete="username"
+required
+/>
+</label>
+
+<label>
+<span>Password</span>
+
+<input
+type="password"
+id="password"
+placeholder="Enter password"
+autocomplete="current-password"
+required
+/>
+</label>
+
+<button type="submit" class="primary-btn">
+Sign In
+</button>
+
+<p class="demo-text">
+Demo credentials:
+<strong>admin</strong> /
+<strong>admin123</strong>
+</p>
+
+<p id="loginError" class="error-text"></p>
+
+</form>
+
+</div>
+</section>
