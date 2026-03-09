@@ -73,3 +73,119 @@ Demo credentials:
 
 </div>
 </section>
+<section id="dashboardPage" class="dashboard-page hidden">
+
+<header class="navbar">
+
+<div class="brand">
+
+<img src="assets/github-logo.png" alt="GitHub Logo" />
+
+<div>
+<h2>Issue Tracker</h2>
+<p>Track and review repository issues</p>
+</div>
+
+</div>
+
+<form id="searchForm" class="search-bar">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search issues..."
+/>
+
+<button
+type="submit"
+class="primary-btn small-btn">
+Search
+</button>
+
+</form>
+
+</header>
+
+<main class="content-wrap">
+
+<section class="issues-panel">
+
+<div class="tabs" id="tabButtons">
+
+<button class="tab-btn active" data-filter="all">
+All
+</button>
+
+<button class="tab-btn" data-filter="open">
+Open
+</button>
+
+<button class="tab-btn" data-filter="closed">
+Closed
+</button>
+
+</div>
+
+<div class="panel-header">
+
+<div class="panel-left">
+
+<div class="panel-icon-wrap">
+<img src="assets/Aperture.png"
+     alt="Issues icon"
+     class="panel-icon" />
+</div>
+
+<div>
+<h3>
+<span id="issueCount">0</span>
+issues
+</h3>
+
+<p id="panelText">
+Showing all available issues
+</p>
+</div>
+
+</div>
+
+<div class="status-markers">
+
+<span class="marker open-marker">
+<img src="assets/Open-Status.png"
+     alt="Open marker" />
+Open
+<strong id="openCount">0</strong>
+</span>
+
+<span class="marker closed-marker">
+<img src="assets/Closed- Status .png"
+     alt="Closed marker" />
+Closed
+<strong id="closedCount">0</strong>
+</span>
+
+</div>
+
+</div>
+
+<div id="loader" class="loader-wrap hidden">
+<div class="loader"></div>
+</div>
+
+<div id="emptyState" class="empty-state hidden">
+
+<h3>No issues found</h3>
+
+<p>
+Try another tab or search with a different keyword.
+</p>
+
+</div>
+
+<div id="issuesContainer" class="issues-grid"></div>
+
+</section>
+</main>
+</section>
+</div>
