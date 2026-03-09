@@ -215,3 +215,69 @@ async function showIssueModal(id) {
     alert('Unable to load this issue right now.');
   }
 }
+loginForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (username === DEMO_USER.username && password === DEMO_USER.password) {
+    localStorage.setItem('issueTrackerAuth', 'true');
+    loginError.textContent = '';
+    updateAuthView();
+    return;
+  }
+
+  loginError.textContent = 'Invalid username or password.';
+});
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', async () => {
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    state.currentFilter = button.dataset.filter;
+
+    if (state.currentQuery.trim()) {
+      await searchIssues(state.currentQuery.trim());
+    } else {
+      const filtered = getFilteredIssues(state.allIssues, state.currentFilter);
+      renderIssues(filtered);
+    }
+  });
+});
+
+searchForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const query = searchInput.value.trim();
+
+  if (!query) {
+    state.currentQuery = '';
+    const filtered = getFilteredIssues(state.allIssues, state.currentFilter);
+    renderIssues(filtered);
+    return;
+  }
+
+  await searchIssues(query);
+});
+
+issuesContainer.addEventListener('click', event => {
+  const card = event.target.closest('.issue-card');
+  if (!card) return;
+  showIssueModal(card.dataset.id);
+});
+
+closeModal.addEventListener('click', () => issueModal.classList.add('hidden'));
+
+issueModal.addEventListener('click', event => {
+  if (event.target === issueModal) {
+    issueModal.classList.add('hidden');
+  }
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    issueModal.classList.add('hidden');
+  }
+});
+
+updateAuthView();
+
